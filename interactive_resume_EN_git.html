@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Interactive Resume — Restored Base</title>
+<style>
+body{font-family:sans-serif;color:#eee;background:#0f1724;margin:0}
+section{padding:80px 20px;max-width:900px;margin:auto}
+h1,h2{margin:16px 0 16px}
+.card{background:#172033;padding:20px;border-radius:14px;margin-bottom:20px}
+.skill{margin:14px 0}
+.bar.fat{height:16px;background:#2a3448;border-radius:10px;overflow:hidden;margin-top:4px}
+.bar.fat i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7dd3fc,#7b61ff);transition:width 1.2s ease-out}
+.timeline-line{position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(#7dd3fc,#7b61ff);overflow:hidden}
+.timeline-line i{display:block;width:100%;height:0;background:linear-gradient(#7dd3fc,#7b61ff)}
+.timeline{position:relative;padding-left:26px}
+.timeline .item{position:relative;padding-left:34px;margin:18px 0}
+.timeline .dot{position:absolute;left:-2px;top:4px;font-size:14px;line-height:1;transform:scale(0);transition:transform .4s cubic-bezier(.25,.8,.25,1);color:#7dd3fc}
+.timeline .dot.visible{transform:scale(1)}
+.timeline .date{margin-right:8px;opacity:.8;font-size14px}
+.timeline .desc{font-size:14px;margin-top:4px;line-height:1.45;opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease;max-height:0;overflow:hidden}
+.timeline .desc.visible{opacity:1;transform:none;max-height:2000px}
+.timeline .desc p{margin:4px 0}
+.pill{display:inline-block;padding:4px 10px;margin-left:8px;border:1px solid #7dd3fc;border-radius:999px;font-size:12px;text-decoration:none;color:#7dd3fc;vertical-align:middle;}
+.pill:hover{background:rgba(125,211,252,.08);} 
+.icon-link{display:inline-block;width:20px;height:20px;margin-left:6px;vertical-align:middle;}
+.icon-link svg{fill:#7dd3fc;width:100%;height:100%;}
+.icon-link img{filter:invert(90%) sepia(100%) saturate(0%) hue-rotate(200deg) brightness(200%) contrast(100%); width:100%;height:100%;}
+</style>
+</head>
+<body>
+<div style="text-align:right; padding:10px;">
+  <button onclick="switchLang('en')" class="pill">EN</button>
+  <button onclick="switchLang('ru')" class="pill">RU</button>
+</div>
+
+<script>
+function switchLang(lang) {
+  if (lang === 'ru') window.location.href = 'interactive_resume_RU_git.html';
+  else window.location.href = 'interactive_resume_EN_git.html';
+}
+</script>
+<section id="about" class="card">
+  <h1>Marina Zablotskaya</h1>
+  <p>Data Analyst with finance background & Decision Support experience — turning financial & business data into actionable insights using Python, SQL, Excel/BI; familiar with corporate governance, budgeting, and financial performance review.</p>
+</section>
+<section id="experience" class="card timeline">
+  <div class="timeline-line"><i id="tlfill"></i></div>
+  <h2>Experience</h2>
+  <div class="item"><span class="dot">●</span><span class="date">2018–2023</span> Financial Analyst — Otkritie Bank<div class="desc"><p>Governance and strategy oversight for the Bank’s financial subsidiaries (brokerage, factoring, AM) as an independent voice to Boards.</p><p>Challenged business plans and actuals: flagged overstated income (aggressive growth assumptions) and understated costs (tax or provisions omitted); insisted on corrections or escalated to parent Bank when required.</p></div></div>
+  <div class="item"><span class="dot">●</span><span class="date">2012–2016</span> Internal Audit Manager — Otkritie Financial Corporation<div class="desc"><p>Led risk-oriented audits across financial business lines; managed a team of 5 junior auditors.</p><p>Prepared actionable recommendations to management, monitored timely implementation of audit findings.</p></div></div>
+  <div class="item"><span class="dot">●</span><span class="date">2006–2011</span> Auditor — Deloitte<div class="desc"><p>Grew to Senior Auditor, auditing financial services institutions.</p><p>Performed fieldwork, supervised junior staff, evaluated control adequacy, prepared draft reports, and ensured compliance with IFRS and Russian legislation.</p></div></div>
+</section>
+<section id="education" class="card timeline">
+  <div class="timeline-line"><i></i></div>
+  <h2>Education</h2>
+  <div class="item"><span class="dot">●</span><span class="date">2023–2025</span> Data Analysis — SkillBox<div class="desc"><p>Completed Data Analysis professional course.</p></div></div>
+  <div class="item"><span class="dot">●</span><span class="date">2013</span> CFA Level 1<div class="desc"><p>Completed Level 1 (out of 3) of Certified Financial Analyst exam.</p></div></div>
+  <div class="item"><span class="dot">●</span><span class="date">2007–2010</span> ACA, Accounting — ICAEW<div class="desc"><p>Completed Associate Chartered Accountant qualification in IFRS Accounting; gained professional membership.</p></div></div>
+  <div class="item"><span class="dot">●</span><span class="date">2002–2007</span> Specialist, Mathematics & Economics — Southern Federal University<div class="desc"><p>Diploma in Mathematics and Economics with honours; studied mathematics, statistics, modeling, economic & financial analysis.</p></div></div>
+</section>
+<section id="skills" class="card">
+  <h2>Skills</h2>
+  <div class="skill"><span>Python</span><div class="bar fat"><i data-pct="80"></i></div></div>
+  <div class="skill"><span>SQL</span><div class="bar fat"><i data-pct="75"></i></div></div>
+  <div class="skill"><span>Excel / BI</span><div class="bar fat"><i data-pct="80"></i></div></div>
+</section>
+<section id="projects" class="card timeline">
+  <div class="timeline-line"><i></i></div>
+  <h2>Projects</h2>
+  <div class="item"><span class="dot">●</span> <span>Customer satisfaction survey analysis</span><a class="pill" href="https://github.com/marina-zab/Customers-satisfation-survey-analytics-Megafon---final-project" target="_blank">View on GitHub</a><div class="desc"><p>Based on >3 000 ratings found that poor call‑quality drives −0.7 rating points vs slow internet −0.5; used hypothesis testing & bootstrap. <b>[Python · pandas · matplotlib · plotly]</b></p></div></div>
+  <div class="item"><span class="dot">●</span> <span>Staff churn analysis for a production company</span><a class="pill" href="https://github.com/marina-zab/Coursework_2" target="_blank">View on GitHub</a><div class="desc"><p>Part 1: 6‑year HR panel: production churn due to lack of pay, promotion or unhappiness; IT from overtime; females churn more early careers; Part 2: parsed social posts, less than 0.3% views convert to actions. <b>[Python · pandas · matplotlib · RegEx · SQL]</b></p></div></div>
+  <div class="item"><span class="dot">●</span> <span>Students' performance analysis for an online platform</span><a class="pill" href="https://github.com/marina-zab/Coursework_1" target="_blank">View on GitHub</a><div class="desc"><p>9 000 students × 15 courses × 3y: conversion & time analysis; PHP/Web‑dev final paper and UX/Java study modules too heavy and need to be split in parts; slow overall progress: only 2% finish in 3y. <b>[Python · pandas · matplotlib]</b></p></div></div>
+  <div class="item"><span class="dot">●</span> <span>Runners' statistics app (Streamlit)</span><a class="pill" href="https://garden-ring-race-app.streamlit.app/" target="_blank">Open App</a><div class="desc"><p>App parses race results, plots histogram, medians and highlights runner query. <b>[Python · Streamlit]</b></p></div></div>
+</section>
+<section id="about extra" class="card">
+     <h3>Outside work:</h3>
+     <p id="about-extra">I like jogging, mountaineering and documentary filmammking;  mon Anglais est beaucoup mieux que mon Français.</p>
+</section>
+<section id="contact" class="card">
+  <h2>Contact</h2>
+  <title>invert()</title>
+     <style>
+         .invert {
+         filter: invert(0.8);
+         }
+     </style>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/marina-zablotskaya-aca" target="_blank"><img class="icon-link invert" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></a></p>
+</section>
+<script>
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.dot, .desc').forEach(el=>{
+    let rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight*0.85){el.classList.add('visible')}
+  });
+  document.querySelectorAll('.bar.fat i').forEach(el=>{
+    let pct=el.getAttribute('data-pct');
+    el.style.width=pct+'%';
+  });
+});
+</script>
+</body>
+</html>
