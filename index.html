@@ -89,15 +89,26 @@ function switchLang(lang) {
 </section>
 <script>
 window.addEventListener('scroll',()=>{
+  const windowHeight = window.innerHeight;
+    // Animate timeline dots and descriptions
   document.querySelectorAll('.dot, .desc').forEach(el=>{
     let rect=el.getBoundingClientRect();
     if(rect.top<window.innerHeight*0.85){el.classList.add('visible')}
   });
-  document.querySelectorAll('.bar.fat i').forEach(el=>{
-    let pct=el.getAttribute('data-pct');
-    el.style.width=pct+'%';
+  // Animate skill bars with a staggered delay
+  const bars = document.querySelectorAll('.bar.fat i');
+  bars.forEach((el, index) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < windowHeight * 0.9 && !el.classList.contains('filled')) {
+      const pct = el.getAttribute('data-pct');
+      setTimeout(() => {
+        el.style.width = pct + '%';
+        el.classList.add('filled');
+      }, index * 200); // ← 200ms delay between each bar
+    }
   });
 });
 </script>
+
 </body>
 </html>
